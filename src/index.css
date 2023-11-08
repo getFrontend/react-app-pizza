@@ -1,4 +1,10 @@
 :root {
+  --c-primary: #fe724c;
+  --c-text: #000;
+  --c-text-secondary: #5B5B5E;
+  --c-white: #fff;
+  --c-separator: #D4D6E0;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
