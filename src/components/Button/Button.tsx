@@ -1,9 +1,10 @@
 import './Button.module.css';
 import { ButtonProps } from './Button.props';
+import cn from 'classnames';
 
-function Button({ children, ...props }: ButtonProps) {
+function Button({ children, className, ...props }: ButtonProps) {
   return (
-    <button className='button accent' {...props}>{children}</button>
+    <button className={cn('button accent', className)} {...props}>{children}</button>
   );
 }
 
