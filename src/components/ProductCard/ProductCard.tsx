@@ -4,12 +4,12 @@ import { ProductCardProps } from './ProductCard.props';
 
 function ProductCard(props: ProductCardProps) {
   return (
-    <Link to={'/'}>
+    <Link to={`/product/${props.id}`}>
       <div className={styles['card']}>
         <div className={styles['head']} style={{ backgroundImage: `url('${props.image}'` }}>
           <div className={styles['price']}>
             {props.price}
-            <span className={styles['currency']}> $</span>
+            <span className={styles['currency']}> ₴</span>
           </div>
           <button className={styles['add-to-cart']}>
             <img src="./img/icons/icon-cart-button.svg" alt="add to cart" />
