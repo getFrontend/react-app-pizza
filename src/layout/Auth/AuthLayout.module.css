@@ -1,0 +1,16 @@
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.logo,
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  border-left: 1px solid var(--c-separator);
+}
