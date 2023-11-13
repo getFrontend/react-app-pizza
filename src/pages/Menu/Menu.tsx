@@ -35,8 +35,8 @@ export function Menu() {
 	return (
 		<>
 			<div className={styles['head']}>
-				<Headling>Menu</Headling>
-				<Search placeholder="Enter your favourite meal" />
+				<Headling>Меню</Headling>
+				<Search placeholder="Поиск пиццы" />
 			</div>
 			<div>
 				{error && <>{error}</>}
