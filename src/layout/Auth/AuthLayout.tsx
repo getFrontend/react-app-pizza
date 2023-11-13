@@ -5,7 +5,7 @@ export function AuthLayout() {
   return (
     <div className={styles['layout']}>
       <div className={styles['logo']}>
-        <img src="/img/logo.svg" alt="Pizza logo" />
+        <img src="/img/logo.png" alt="Pizza logo" />
       </div>
       <div className={styles['content']}>
         <Outlet />
