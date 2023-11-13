@@ -2,12 +2,16 @@
   max-width: 450px;
   width: 100%;
   display: grid;
-  gap: 40px;
+  gap: 50px;
 }
 
 .form {
   display: grid;
-  gap: 30px;
+  gap: 40px;
+}
+
+.form>button {
+  justify-self: center;
 }
 
 .field {
@@ -17,27 +21,27 @@
 
 .field label,
 .field input::placeholder {
-	color: #C4C4C4;
-	font-size: 17px;
-	font-style: normal;
-	font-weight: 400;
+  color: #C4C4C4;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .links {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
-	color: var(--c-text-secondary);
-	font-size: 14px;
+  color: var(--c-text-secondary);
+  font-size: 14px;
 }
 
 .links a {
-	text-decoration: none;
-	color: var(--c-primary);
+  text-decoration: none;
+  color: var(--c-primary);
 }
 
 .links a:hover {
-	text-decoration: none;
-	color: var(--c-primary-hover);
+  text-decoration: none;
+  color: var(--c-primary-hover);
 }
