@@ -45,3 +45,7 @@
   text-decoration: none;
   color: var(--c-primary-hover);
 }
+
+.error {
+  color: red;
+}
