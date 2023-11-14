@@ -71,6 +71,8 @@
 }
 
 .content {
+	display: grid;
+	gap: 30px;
 	margin-left: 320px;
 	padding: 40px 60px;
 	width: 100%;
