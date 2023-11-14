@@ -39,7 +39,7 @@ export function Login() {
         email,
         password
       });
-      localStorage.setItem('jwtkey', data.access_token);
+      // localStorage.setItem('jwtkey', data.access_token);
       dispatch(userActions.addJwt(data.access_token));
       navigate('/');
     } catch (e) {
