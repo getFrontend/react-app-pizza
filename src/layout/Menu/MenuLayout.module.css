@@ -1,9 +1,11 @@
 .layout {
+	position: relative;
 	display: flex;
-	min-height: 100vh;
 }
 
 .sidebar {
+	position: fixed;
+	min-height: 90vh;
 	padding: 30px;
 	min-width: 240px;
 	display: flex;
@@ -69,6 +71,7 @@
 }
 
 .content {
+	margin-left: 320px;
 	padding: 40px 60px;
 	width: 100%;
 }
