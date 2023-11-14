@@ -25,7 +25,7 @@ function CartItem(props: CartItemProps) {
       <div className={styles['image']} style={{ backgroundImage: `url('${props.image}')` }}></div>
       <div className={styles['description']}>
         <div className={styles['name']}>{props.name}</div>
-        <div className={styles['price']}>{props.price}&nbsp;₽</div>
+        <div className={styles['price']}>{props.price}&nbsp;₴</div>
       </div>
       <div className={styles['actions']}>
         <button className={styles['minus']} onClick={descrease}>
