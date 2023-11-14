@@ -75,3 +75,14 @@
 	padding: 40px 60px;
 	width: 100%;
 }
+
+.cart-count {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--c-primary);
+	color: var(--c-white);
+	border-radius: 50%;
+}

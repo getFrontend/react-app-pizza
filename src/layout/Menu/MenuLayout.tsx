@@ -40,8 +40,9 @@ export function Layout() {
 				<NavLink to='/cart' className={({ isActive }) => cn(styles['link'], {
 					[styles.active]: isActive
 				})}>
-					<img src="/img/icons/icon-cart.svg" alt="icon cart" />Заказ</NavLink>
-				{items.reduce((acc, item) => acc += item.count, 0)}
+					<img src="/img/icons/icon-cart.svg" alt="icon cart" />Корзина
+					<span className={styles['cart-count']}>{items.reduce((acc, item) => acc += item.count, 0)}</span>
+				</NavLink>
 			</div>
 			<Button className={styles['exit']} onClick={logout}>
 				<img src="/img/icons/icon-exit.svg" alt="icon exit" />
