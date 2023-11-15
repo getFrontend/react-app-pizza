@@ -1,18 +1,25 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Headling from '../../components/Headling/Headling';
-import { RootState } from '../../store/store';
+import { AppDispatch, RootState } from '../../store/store';
 import CartItem from '../../components/CartItem/CartItem';
 import { useEffect, useState } from 'react';
 import { Product } from '../../interfaces/product.interface';
 import axios from 'axios';
 import { PREFIX } from '../../helpers/API';
 import styles from './Cart.module.css';
+import Button from '../../components/Button/Button';
+import { useNavigate } from 'react-router-dom';
+import { cartActions } from '../../store/cart.slice';
 
 const DELIVERY_PRICE = 99;
 
 export function Cart() {
 	const [cartProducts, setCartProducts] = useState<Product[]>([]);
 	const items = useSelector((s: RootState) => s.cart.items);
+	const jwt = useSelector((s: RootState) => s.user.jwt);
+	const navigate = useNavigate();
+	const dispatch = useDispatch<AppDispatch>();
+
 	const total =
 		items.map(i => {
 			const product = cartProducts.find(p => p.id === i.id);
@@ -30,6 +37,21 @@ export function Cart() {
 	const loadAllItems = async () => {
 		const res = await Promise.all(items.map(item => getItem(item.id)));
 		setCartProducts(res);
+	};
+
+	const checkout = async () => {
+		await axios.post(`${PREFIX}/order`,
+			{
+				products: items
+			},
+			{
+				headers: {
+					Authorization: `Bearer ${jwt}`
+				}
+			}
+		);
+		dispatch(cartActions.clean());
+		navigate('/order');
 	};
 
 	useEffect(() => {
@@ -59,6 +81,9 @@ export function Cart() {
 			<div className={styles['line']}>
 				<div className={styles['text']}>Итого с учётом доставки</div>
 				<div className={styles['price']}>{total + DELIVERY_PRICE}&nbsp;<span>₴</span></div>
+			</div>
+			<div className={styles['checkout']}>
+				<Button appearence='big' onClick={checkout}>Оформить</Button>
 			</div>
 		</>
 	);
